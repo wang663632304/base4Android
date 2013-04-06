@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">MainActivity</string>
+
+
+    <string name="timeout">网络有问题，连不上</string>
+    <string name="unknown_error_code">未知错误，错误代码</string>
+    <string name="unknown_network_error">某些网络节点又出故障，换个网络试试</string>
 </resources>

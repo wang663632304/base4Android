@@ -2,6 +2,8 @@ package com.yanlu.goocyx.android;
 
 import android.app.Activity;
 import android.os.Bundle;
+import com.yanlu.goocyx.android.common.error.ErrorInfo;
+import com.yanlu.goocyx.android.common.util.Log2;
 
 public class MainActivity extends Activity
 {
@@ -11,5 +13,6 @@ public class MainActivity extends Activity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+        Log2.d("", ErrorInfo.NETWORK_TIME_OUT.getMsg());
     }
 }
