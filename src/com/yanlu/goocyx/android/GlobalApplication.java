@@ -3,6 +3,7 @@ package com.yanlu.goocyx.android;
 import android.app.Application;
 import android.content.Context;
 import com.yanlu.goocyx.android.common.util.Log2;
+import com.yanlu.goocyx.android.db.DBHelper;
 
 /**
  * User: captain_miao
@@ -13,7 +14,8 @@ public class GlobalApplication extends Application {
 	private static final String TAG = "GlobalApplication";
 
 	private static Context context;
-
+	
+	private static DBHelper mDbHelper;
 
 	public static Context getContext() {
 		return context;
@@ -36,4 +38,12 @@ public class GlobalApplication extends Application {
     public static String getStringFromValues(int i) {
         return context.getString(i);
     }
+    
+    //获取数据库访问实例
+    public static DBHelper getDBHelper() {
+		if (mDbHelper == null) {
+			mDbHelper = new DBHelper(context);
+		}
+		return mDbHelper;
+	}
 }
