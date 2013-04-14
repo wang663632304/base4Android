@@ -37,7 +37,7 @@ public class BaseException extends Exception {
                     result = oriError;
                 } else {
 
-                    result = GlobalApplication.getStringFromValues(R.string.unknown_error_code) + error_code;
+                    result = ErrorInfo.UNKNOWN_NETWORK_ERROR.getMsg() + error_code;
                 }
             }
         }

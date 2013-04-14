@@ -95,7 +95,7 @@ public class ApacheHttpClient {
              StringBuilder urlBuilder = new StringBuilder(urlStr);
              urlBuilder.append("?").append(Utility.encodeUrl(param));
              URL url = new URL(urlBuilder.toString());
-             Log2.d("","get request" + url);
+             Log2.d("","get request:" + url);
              Proxy proxy = getProxy();
              HttpURLConnection urlConnection;
              if (proxy != null)

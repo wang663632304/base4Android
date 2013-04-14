@@ -2,8 +2,10 @@ package com.yanlu.goocyx.android;
 
 import android.app.Activity;
 import android.os.Bundle;
-import com.yanlu.goocyx.android.common.error.ErrorInfo;
+import android.widget.TextView;
 import com.yanlu.goocyx.android.common.util.Log2;
+import com.yanlu.goocyx.android.net.AsyncDataTask;
+import com.yanlu.goocyx.android.net.SimpleListener;
 
 public class MainActivity extends Activity
 {
@@ -13,6 +15,15 @@ public class MainActivity extends Activity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-        Log2.d("", ErrorInfo.NETWORK_TIME_OUT.getMsg());
+        //测试http请求
+        AsyncDataTask.execute("http://g.cn", new SimpleListener(){
+
+            public void postExecute(String ret) {
+                ((TextView)findViewById(R.id.main_tv_content)).setText(ret);
+                Log2.d("", ret);
+            }
+
+        });
     }
+
 }

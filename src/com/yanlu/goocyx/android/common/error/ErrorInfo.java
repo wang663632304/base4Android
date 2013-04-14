@@ -9,8 +9,7 @@ import com.yanlu.goocyx.android.R;
  */
 public enum ErrorInfo {
     NETWORK_TIME_OUT(309, GlobalApplication.getStringFromValues(R.string.timeout)),
-    UNKNOWN_NETWORK_ERROR(310, GlobalApplication.getStringFromValues(R.string.unknown_network_error)),
-    USER_LOGIN_OTHER_FAIL(333, GlobalApplication.getStringFromValues(R.string.timeout));
+    UNKNOWN_NETWORK_ERROR(310, GlobalApplication.getStringFromValues(R.string.unknown_network_error));
 
 
     private ErrorInfo(int code, String msg) {

@@ -4,10 +4,11 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     >
-<TextView  
+<TextView
+        android:id="@+id/main_tv_content"
     android:layout_width="fill_parent" 
     android:layout_height="wrap_content" 
-    android:text="Hello World, MainActivity"
+    android:text="@null"
     />
 </LinearLayout>
 
