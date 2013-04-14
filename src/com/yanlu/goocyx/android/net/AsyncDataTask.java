@@ -4,7 +4,9 @@ import android.os.Handler;
 import android.os.Message;
 import com.yanlu.goocyx.android.common.error.BaseException;
 import com.yanlu.goocyx.android.common.util.Log2;
+import com.yanlu.goocyx.android.net.http.HttpMethod;
 
+import java.util.Map;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
@@ -41,6 +43,17 @@ public class AsyncDataTask {
      * @date 2012-10-11下午5:06:24
      */
     public static <T> void execute(final String url, final DataLoadListener<T> listener) {
+        execute(HttpMethod.GET, url, null, listener);
+    }
+
+    public static <T> void execute(final String url, final Map<String, String> param,
+                                   final DataLoadListener<T> listener) {
+        execute(HttpMethod.GET, url, param, listener);
+    }
+
+    public static <T> void execute(final HttpMethod httpMethod, final String url, final Map<String, String> param,
+                                   final DataLoadListener<T> listener) {
+
         try {
             listener.preExecute();
 
@@ -61,7 +74,7 @@ public class AsyncDataTask {
                     public void run() {
                         T sr = null;
                         try {
-                            sr = listener.parser(HttpExecuteTemplate.execute(url));
+                            sr = listener.parser(HttpExecuteTemplate.execute(httpMethod, url ,param));
                         } catch (BaseException e) {
                             e.printStackTrace();
                         }
