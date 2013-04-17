@@ -11,11 +11,13 @@ import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-
+/**
+ * User: captain_miao
+ * Date: 13-4-14
+ */
 /**
  * 数据异步加载
  *
- * @author tianxiang
  * @date 2012-10-11 下午5:11:52
  */
 public class AsyncDataTask {
